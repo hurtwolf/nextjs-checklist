@@ -28,7 +28,7 @@ function Header({}: Props) {
             <button 
             onClick={openModal}
             className="block text-white bg-slate-600 hover:bg-slate-500/75 px-4 py-2 font-sans tracking-wide uppercase font-medium">
-              new item
+              add item
             </button>
           </div>
         </div>
