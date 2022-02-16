@@ -17,10 +17,10 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    background: '#1e293b',
+    background: '#334155',
     color: 'white',
-    border: '2px solid black',
-    width: '400px'
+    border: '1px solid #64748b',
+    width: '400px',
   },
 };
 
@@ -63,19 +63,19 @@ function NewItemModal({ isOpen, closeModal }: Props) {
       contentLabel="CheckList Modal"
       overlayClassName="modal-overlay"
     >
-      <h2 className='mb-4 text-center font-medium'>Create a new Item</h2>
+      <h2 className='mb-4 text-center font-medium font-poppins'>Create a new Item</h2>
       <form onSubmit={(e) => handleSubmit(e)}>
-        <input onChange={(e) => handleChange(e)} id='title' name='title' placeholder='Task (Required)' className='w-full block bg-slate-700 p-2 text-white mb-3' type="text" required/>
-        <input onChange={(e) => handleChange(e)} id='description' name='description' placeholder='Description (Required)' className='w-full block bg-slate-700 p-2 text-white mb-6' type="text" required/>
+        <input onChange={(e) => handleChange(e)} id='title' name='title' placeholder='Task' className='w-full block bg-slate-600 p-2 text-white mb-3' type="text" required/>
+        <input onChange={(e) => handleChange(e)} id='description' name='description' placeholder='Description' className='w-full block bg-slate-600 p-2 text-white mb-6' type="text" required/>
         <div className='flex justify-center items-center mb-6'>
           <input 
           type="checkbox" 
           name="checked" 
           checked={isChecked} 
           onChange={handleCheckBox}
-          className='bg-gray-50 border border-gray-300 focus:ring-3 focus:ring-blue-300 h-6 w-6 rounded dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800'
+          className='h-6 w-6'
           />
-          <p className='ml-2 text-sm font-medium uppercase'>Mark as Completed</p>
+          <p className='ml-2 text-sm font-medium font-poppins uppercase'>Mark as Completed</p>
         </div>
         <div className='flex space-x-4'>
           <button className='block w-full text-center p-2 bg-slate-600 hover:bg-slate-500/75 text-white font-medium' type='submit'>Add Item</button>

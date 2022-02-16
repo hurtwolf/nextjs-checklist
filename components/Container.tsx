@@ -14,7 +14,7 @@ function Container({ children }: Props) {
         <meta property="og:title" content="Another CheckList App" key="title" />
       </Head>
       <Header />
-      <main className='max-w-7xl mx-auto text-white'>
+      <main className='mx-4 lg:mx-auto max-w-7xl text-white'>
         {children}
       </main>
       <Footer />

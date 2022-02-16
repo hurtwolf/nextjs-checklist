@@ -6,8 +6,8 @@ type Props = {}
 function Footer({}: Props) {
   return (
     <div className='max-w-7xl mx-auto text-white'>
-      <div className='border-t border-slate-500'>
-        <div className='flex justify-items-end mt-4 space-x-4'>
+      <div className='mx-4 xl:mx-0 border-t border-slate-500'>
+        <div className='flex justify-items-end mt-6 space-x-6'>
           <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/hurtwxlf">
             <BsTwitter className='w-7 h-7' />
           </a> 

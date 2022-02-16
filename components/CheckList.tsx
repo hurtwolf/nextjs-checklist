@@ -9,7 +9,7 @@ function CheckList({ list }: Props) {
   const { handleChecked, deleteItem } = useStore().CheckListStore
 
   return (
-    <div key={list.id} className='flex justify-between border border-slate-700 my-6'>
+    <div key={list.id} className='flex justify-between border border-slate-700 last-of-type:mb-6'>
       <div className='flex justify-between bg-slate-800/50 text-white w-full p-4 px-6'>
         <p className='font-medium'>{list.title}</p>
         <p>{list.description}</p>

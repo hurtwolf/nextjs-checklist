@@ -18,12 +18,11 @@ function Header({}: Props) {
   }
 
   return (
-    <header className='bg-slate-800 mb-10'>
+    <header className='bg-slate-800 mb-6'>
       <div className='max-w-7xl py-4 mx-auto text-white'>
-        <div className="flex flex-row items-center justify-between">
-          <div className="text-xl hidden md:flex">
-            <GoChecklist className='h-[2rem] w-[2rem] mr-2 font-light' />
-            CHECK<span className='font-bold'>LIST</span>
+        <div className="mx-4 xl:mx-0 flex flex-row items-center justify-between">
+          <div className="text-xl flex tracking-wider font-poppins">
+            <p>CHECK<span className='font-bold'>LIST</span></p>
           </div>
           <div className="flex overflow-hidden">
             <button 

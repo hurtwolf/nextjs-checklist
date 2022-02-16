@@ -5,11 +5,10 @@ import Container from '../components/Container'
 import CheckList from '../components/CheckList'
 import { useEffect, useState } from 'react'
 import { HiOutlineSearch } from 'react-icons/hi'
-import Spinner from '../components/Spinner'
 
 const Home: NextPage = () => {
   const { CheckListStore } = useStore()
-  const { checklist, getList, loading } = CheckListStore
+  const { checklist, getList } = CheckListStore
   const [searchValue, setSearchValue] = useState('')
 
   useEffect(() => {
@@ -32,16 +31,18 @@ const Home: NextPage = () => {
     <Container>
       <div>
         <div>
-          <div className='flex justify-between font-medium'>
+          <div className='flex justify-between font-medium text-lg'>
             <p className='mb-3'>
-              {checklist.length > 1 ? checklist.length + ' items' : checklist.length + ' item'}
+              {!checklist.length && checklist.length + ' Items'}
+              {checklist.length === 1 && checklist.length + ' Item'}
+              {checklist.length > 1 && checklist.length + ' Items'}
             </p>
             <p>{matchPerc() + '%'} / 100%</p>
           </div>
-          <div className='relative mb-4'>
+          <div className='relative mb-6'>
             <input 
             type="search" 
-            placeholder='Filter Items...' 
+            placeholder='Search list...' 
             className='block p-3 px-4 w-full bg-slate-500 placeholder:text-slate-200'
             onChange={(e) => setSearchValue(e.target.value)}
             />
@@ -54,7 +55,7 @@ const Home: NextPage = () => {
           })}
         </div>
         {!checklist.length && 
-          <p className='text-center text-xl text-slate-300 my-8'>You have no items.</p>
+          <p className='text-center text-xl text-slate-300 my-8'>You have no Items.</p>
         }
       </div>
     </Container>
