@@ -9,9 +9,9 @@ function Container({ children }: Props) {
   return (
     <div id='root'>
       <Head>
-        <title>Another CheckList App</title>
+        <title>Not Just Another CheckList App</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta property="og:title" content="Another CheckList App" key="title" />
+        <meta property="og:title" content="Not Just Another CheckList App" key="title" />
       </Head>
       <Header />
       <main className='mx-4 lg:mx-auto max-w-7xl text-white'>
