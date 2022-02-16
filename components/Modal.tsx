@@ -66,7 +66,7 @@ function NewItemModal({ isOpen, closeModal }: Props) {
       <h2 className='mb-4 text-center font-medium font-poppins'>Create a new Item</h2>
       <form onSubmit={(e) => handleSubmit(e)}>
         <input onChange={(e) => handleChange(e)} id='title' name='title' placeholder='Task' className='w-full block bg-slate-600 p-2 text-white mb-3' type="text" required/>
-        <input onChange={(e) => handleChange(e)} id='description' name='description' placeholder='Description' className='w-full block bg-slate-600 p-2 text-white mb-6' type="text" required/>
+        <input onChange={(e) => handleChange(e)} id='description' name='description' placeholder='Description' className='w-full block bg-slate-600 p-2 text-white mb-6' type="text" />
         <div className='flex justify-center items-center mb-6'>
           <input 
           type="checkbox" 
