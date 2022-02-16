@@ -30,7 +30,7 @@ class CheckListStore {
   newCheckList = (data: checklistProps) => {
     this.loading = true
     if(!data.title) return
-    if(!data.description) return
+    //if(!data.description) return
     this.checklist.push({
       id: data.id,
       title: data.title,
