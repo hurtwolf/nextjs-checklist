@@ -32,11 +32,6 @@ const Home: NextPage = () => {
     <Container>
       <div>
         <div>
-          {loading && 
-            <div className='flex justify-center items-center'>
-              <Spinner />
-            </div>
-          }
           <div className='flex justify-between font-medium'>
             <p className='mb-3'>
               {checklist.length > 1 ? checklist.length + ' items' : checklist.length + ' item'}
