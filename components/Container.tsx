@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import React from 'react'
+import Footer from './Footer'
 import Header from './Header'
 
 type Props = { children: JSX.Element }
@@ -16,6 +17,7 @@ function Container({ children }: Props) {
       <main className='max-w-7xl mx-auto text-white'>
         {children}
       </main>
+      <Footer />
     </div>
   )
 }

@@ -22,42 +22,44 @@ const Home: NextPage = () => {
 
   function matchPerc(){
     var matches = checklist.filter(p => p.checked === true)
-    return Math.trunc((matches.length / checklist.length * 100)) + '%'
+    const percentage = Math.trunc((matches.length / checklist.length * 100))
+
+    if(isNaN(Math.trunc((matches.length / checklist.length * 100)))) return 0
+    return percentage
   }
 
   return (
     <Container>
       <div>
-        {!checklist.length ? 
-          <p className='text-center text-xl text-slate-300'>No Entries found, add some now!</p>
-          :
-          <div>
-            {loading && 
-              <div className='flex justify-center items-center'>
-                <Spinner />
-              </div>
-            }
-            <div className='flex justify-between font-medium'>
-              <p className='mb-3'>
-                {checklist.length > 1 ? checklist.length + ' items' : checklist.length + ' item'}
-              </p>
-              <p>{matchPerc()} / 100%</p>
+        <div>
+          {loading && 
+            <div className='flex justify-center items-center'>
+              <Spinner />
             </div>
-            <div className='relative mb-4'>
-              <input 
-              type="search" 
-              placeholder='Filter Items...' 
-              className='block p-3 px-4 w-full bg-slate-500 placeholder:text-slate-200'
-              onChange={(e) => setSearchValue(e.target.value)}
-              />
-              <HiOutlineSearch className='absolute w-6 h-6 right-3 top-3' />
-            </div>
-            {filteredItems.map((list) => {
-              return (
-                <CheckList key={list.id} list={list} />
-              )
-            })}
+          }
+          <div className='flex justify-between font-medium'>
+            <p className='mb-3'>
+              {checklist.length > 1 ? checklist.length + ' items' : checklist.length + ' item'}
+            </p>
+            <p>{matchPerc() + '%'} / 100%</p>
           </div>
+          <div className='relative mb-4'>
+            <input 
+            type="search" 
+            placeholder='Filter Items...' 
+            className='block p-3 px-4 w-full bg-slate-500 placeholder:text-slate-200'
+            onChange={(e) => setSearchValue(e.target.value)}
+            />
+            <HiOutlineSearch className='absolute w-6 h-6 right-3 top-3' />
+          </div>
+          {filteredItems.map((list) => {
+            return (
+              <CheckList key={list.id} list={list} />
+            )
+          })}
+        </div>
+        {!checklist.length && 
+          <p className='text-center text-xl text-slate-300 my-8'>You have no items.</p>
         }
       </div>
     </Container>
